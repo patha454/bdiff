@@ -11,7 +11,7 @@ jobs:
       run: sudo apt-get install clang-tidy
     - name: Lint with clang-tidy
       run: FILES=$(find src/ -name *.c -o -name *.h)
-        clang-tidy "$FILES" --config='' - -Iinclude
+        clang-tidy "$FILES" --config='' -- -Iinclude
   clang-format:
     runs-on: ubuntu-latest
     steps:
