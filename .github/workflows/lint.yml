@@ -15,7 +15,7 @@ jobs:
         mv clang* ~/clang-10
     - name: Lint with clang-tidy
       run: FILES=$(find src/ -name *.c -o -name *.h)
-        ~/bin/clang-tidy "$FILES" --config='' -- -Iinclude
+        ~clang-10/bin/clang-tidy "$FILES" --config='' -- -Iinclude
   clang-format:
     runs-on: ubuntu-latest
     steps:
