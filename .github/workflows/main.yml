@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build bdiff with CMake
       run: |
-        export CFLAGS='/Za /W3 /Wall /Wx'
+        set CFLAGS='/Za /W3 /Wall /Wx'
         cmake -B build .
         cmake --build build
     - uses: actions/upload-artifact@v2
