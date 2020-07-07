@@ -20,7 +20,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: bdiff-${{ runner.os }}-${{ matrix.toolchain }}-${{ github.sha }}
-        path: build/bdiff
+        path: build\Debug\bdiff.exe
 
   build-windows:
     runs-on: windows-latest
