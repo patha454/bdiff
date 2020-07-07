@@ -19,5 +19,5 @@ jobs:
       - name: Install clang-format
         run: sudo apt-get install clang-format
       - name: Stylecheck with clang-format
-        run: FILES$(find src/ -name *.c -o -name *.h)
+        run: FILES=$(find src/ -name *.c -o -name *.h)
           clang-format -Werror --dry-run $FILES
