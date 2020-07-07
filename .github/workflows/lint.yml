@@ -1,9 +1,10 @@
-name: CI
+name: Lint
 
 on: push
 
 jobs:
   clang-tidy:
+    name: clang-tidy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -18,16 +19,3 @@ jobs:
         FILES=$(find src/ -name *.c -o -name *.h)
         cat $FILES
         ~/clang-10/bin/clang-tidy $FILES --config='' --warnings-as-errors=* -- -Iinclude
-  clang-format:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install clang-10
-        run: |
-          wget -O clang.tar.gz --show-progress=off https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
-          tar -xf clang.tar.gz
-          rm clang.tar.gz
-          mv clang* ~/clang-10
-      - name: Stylecheck with clang-format
-        run: FILES=$(find src/ -name *.c -o -name *.h)
-          ~/clang-10/bin/clang-format --dry-run --Werror $FILES
