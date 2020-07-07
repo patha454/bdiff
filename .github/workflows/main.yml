@@ -19,7 +19,7 @@ jobs:
         cmake --build build
     - uses: actions/upload-artifact@v2
       with:
-        name: bdiff-${{ runner.os }}-${{ matrix.toolchain }}-${{ github.sha }}
+        name: bdiff-${{ matrix.os }}-${{ matrix.toolchain }}-${{ github.sha }}
         path: build/bdiff
 
   build-windows:
