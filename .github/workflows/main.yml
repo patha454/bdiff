@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         toolchain: [clang, gcc]
