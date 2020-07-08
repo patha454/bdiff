@@ -16,5 +16,5 @@ jobs:
         mv clang* ~/clang-10
     - name: Stylecheck with clang-format
       run: |
-        FILES=$(find src/ -name *.c -o -name *.h)
+        FILES=$(find src/ include/ -name *.c -o -name *.h)
         ~/clang-10/bin/clang-format --dry-run --Werror $FILES

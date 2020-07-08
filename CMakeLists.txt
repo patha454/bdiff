@@ -10,4 +10,5 @@ set(CMAKE_C_STANDARD 99)
 # Create the bdiff executable.
 add_executable(bdiff)
 target_include_directories(bdiff PUBLIC include)
-target_sources(bdiff PUBLIC src/bdiff.c)
+target_sources(bdiff PUBLIC src/bdiff.c
+    src/buffer.c)
