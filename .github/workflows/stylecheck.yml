@@ -17,4 +17,4 @@ jobs:
     - name: Stylecheck with clang-format
       run: |
         FILES=$(find src/ include/ -name *.c -o -name *.h)
-        ~/clang-10/bin/clang-format --dry-run --Werror $FILES
+        ~/clang-10/bin/clang-format --dry-run --style=file --Werror $FILES
