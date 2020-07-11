@@ -50,8 +50,8 @@ extern struct Buffer* new_buffer()
  */
 extern struct Buffer* new_buffer_from_file(FILE* const file)
 {
-    size_t _file_length = 0;
-    size_t file_position = 0;
+    long _file_length = 0;
+    long file_position = 0;
     struct Buffer* buffer = NULL;
 
     _file_length = file_length(file);
@@ -124,8 +124,9 @@ extern size_t buffer_allocated_length(const struct Buffer* const buffer)
  */
 extern uint_fast8_t buffer_realloc(struct Buffer* const buffer, size_t new_length)
 {
+    long delta = 0;
     assert(buffer != NULL);
-    long delta = (long)(new_length - buffer->length);
+    delta = (long)(new_length - buffer->length);
     buffer->allocated_length = new_length;
     buffer->data = realloc(buffer->data, buffer->allocated_length);
     if (buffer->data == NULL) {
