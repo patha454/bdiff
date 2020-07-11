@@ -20,10 +20,12 @@
  */
 long file_length(FILE* const file)
 {
+    long initial_pos = -1;
+    long length = -1;
     assert(file != NULL);
-    long initial_pos = ftell(file);
+    initial_pos = ftell(file);
     assert(fseek(file, 0, SEEK_END) == 0);
-    long length = ftell(file);
+    length = ftell(file);
     assert(fseek(file, initial_pos, SEEK_SET) == 0);
     return length;
 }
