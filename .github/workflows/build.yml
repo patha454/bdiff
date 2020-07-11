@@ -21,17 +21,3 @@ jobs:
       with:
         name: bdiff-${{ matrix.os }}-${{ matrix.toolchain }}-${{ github.sha }}
         path: build/bdiff
-
-  build-windows:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build bdiff with CMake
-      run: |
-        set CFLAGS='/Za /W3 /Wall /Wx'
-        cmake -B build .
-        cmake --build build
-    - uses: actions/upload-artifact@v2
-      with:
-        name: bdiff-${{ runner.os }}-msvc-${{ github.sha }}
-        path: build\Debug\bdiff.exe

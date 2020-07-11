@@ -15,8 +15,8 @@ int main(int argc, char* argv[])
     old = fopen(argv[0], "rb");
     new = fopen(argv[1], "rb");
     assert(old != NULL && new != NULL);
-    printf("Old length: %zu\n", file_length(old));
-    printf("New length: %zu\n", file_length(new));
+    printf("Old length: %lu\n", file_length(old));
+    printf("New length: %lu\n", file_length(new));
     struct Buffer* a = new_buffer_from_file(old);
     struct Buffer* b = new_buffer_from_file(new);
     printf("A len: %zu, alloclen: %zu\n", buffer_length(a), buffer_allocated_length(a));
