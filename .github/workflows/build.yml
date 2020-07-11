@@ -31,4 +31,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: bdiff-windows-msvc-${{ github.sha }}
-        path: build/bdiff
+        path: build/bdiff.exe
