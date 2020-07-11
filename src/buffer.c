@@ -50,8 +50,8 @@ extern struct Buffer* new_buffer()
  */
 extern struct Buffer* new_buffer_from_file(FILE* const file)
 {
-    size_t _file_length = 0;
-    size_t file_position = 0;
+    long _file_length = 0;
+    long file_position = 0;
     struct Buffer* buffer = NULL;
 
     _file_length = file_length(file);
