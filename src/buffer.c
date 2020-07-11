@@ -125,7 +125,7 @@ extern size_t buffer_allocated_length(const struct Buffer* const buffer)
 extern uint_fast8_t buffer_realloc(struct Buffer* const buffer, size_t new_length)
 {
     assert(buffer != NULL);
-    long delta = new_length - buffer->length;
+    long delta = (long)(new_length - buffer->length);
     buffer->allocated_length = new_length;
     buffer->data = realloc(buffer->data, buffer->allocated_length);
     if (buffer->data == NULL) {
