@@ -20,6 +20,6 @@
  * @param file The file to inspect.
  * @return The length of `file`.
  */
-size_t file_length(FILE* file);
+long file_length(FILE* file);
 
 #endif

@@ -18,12 +18,12 @@
  * @param file The file to inspect.
  * @return The length of `file`.
  */
-size_t file_length(FILE* const file)
+long file_length(FILE* const file)
 {
     assert(file != NULL);
-    size_t initial_pos = ftell(file);
+    long initial_pos = ftell(file);
     assert(fseek(file, 0, SEEK_END) == 0);
-    size_t length = ftell(file);
+    long length = ftell(file);
     assert(fseek(file, initial_pos, SEEK_SET) == 0);
     return length;
 }
