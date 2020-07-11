@@ -20,9 +20,7 @@ jobs:
       with:
         name: bdiff-${{ matrix.os }}-${{ matrix.toolchain }}-${{ github.sha }}
         path: build/bdiff
-
-  jobs:
-  build-posix:
+  build-windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
